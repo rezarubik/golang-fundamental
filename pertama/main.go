@@ -8,6 +8,13 @@ import (
 
 func main() {
 	fmt.Println("Halo, belajar Golang...")
+	var name string = "Golang"
+	// notes: Langsung tipe data dan assign value ke variabel
+	age := 20
+	// todo: Jika ingin reassign
+	age = 30
+	fmt.Println(name)
+	fmt.Println(age)
 	x := 10
 	y := 9
 	add := calculation.Add(x, y)
