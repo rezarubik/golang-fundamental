@@ -8,28 +8,93 @@ import (
 
 func main() {
 	fmt.Println("Halo, belajar Golang...")
-	title := "Golang the best language"
-	// todo: Quiz perulangan
-	for index, letter := range title {
-		letterString := string(letter)
-		// (letterString == "a" || letterString == "i" || letterString == "u" || letterString == "e" || letterString == "o")
-		// if index%2 == 0 {
-		// 	fmt.Println("index: ", index, " , letter: ", letterString)
-		// }
-		// switch letterString {
-		// case "a", "i", "u", "e", "o":
-		// 	fmt.Println("index: ", index, " , letter: ", letterString)
-		// }
-		// if index%2 == 0 {
-		// 	switch letterString {
-		// 	case "a", "i", "u", "e", "o":
-		// 		fmt.Println("index: ", index, " , letter: ", letterString)
-		// 	}
-		// }
-		if index%2 == 0 && (letterString == "a" || letterString == "i" || letterString == "u" || letterString == "e" || letterString == "o") {
-			fmt.Println("index: ", index, " , letter: ", letterString)
-		}
+	/* ------------------------------ // todo: Map ------------------------------ */
+	// map [key] tipe_data valuenya
+	// note: Langsung assign
+	myMap := map[string]string{
+		"ruby": "This is rubby",
+		"go":   "This is GO",
 	}
+	// var myMap map[string]int
+	// myMap = map[string]int{}
+	// myMap["GO"] = 10
+	// myMap["Javascript"] = 9
+	// myMap["Rubby"] = 8
+	fmt.Println(myMap)
+	// fmt.Println(myMap["GO"])
+	/* ----------------------------- // todo: Slice ----------------------------- */
+	// todo: Assign langsung
+	// gamingConsole := []string{"PS 4", "PS 3", "PS 2", "PS 1"}
+	// todo: Manual
+	// var gamingConsole []string
+	// gamingConsole = append(gamingConsole, "PS 4")
+	// gamingConsole = append(gamingConsole, "PS 3")
+	// gamingConsole = append(gamingConsole, "PS 2")
+	// gamingConsole = append(gamingConsole, "PS 1")
+	// for _, console := range gamingConsole {
+	// 	fmt.Println("Console", console, ", panjang", len(gamingConsole))
+	// }
+	// fmt.Println(gamingConsole)
+	/* ----------------------------- // todo: Array ----------------------------- */
+	// var languages [5]string
+	// var numbers [3]int
+	// languages[0] = "GO"
+	// languages[1] = "JavaScript"
+	// languages[2] = "Ruby"
+	// languages[3] = "PHP"
+	// languages[4] = "Python"
+	// todo: Bisa langsung juga
+	// languages := [5]string{
+	// 	"PHP",
+	// 	"Javascript",
+	// 	"Ruby",
+	// 	"Python",
+	// 	"GO",
+	// }
+	// note: Jika arraynya ingin tidak didefinisikan berapa panjangnya
+	// languages := [...]string{
+	// 	"PHP",
+	// 	"Javascript",
+	// 	"Ruby",
+	// 	"Python",
+	// 	"GO",
+	// 	"Java",
+	// }
+	// numbers[0] = 1
+	// numbers[1] = 2
+	// numbers[2] = 3
+	// lengthLanguages := len(languages)
+	// lengthNumbers := len(numbers)
+	// fmt.Println(languages)
+	// fmt.Println("Panjang array languages adalah", lengthLanguages)
+	// fmt.Println(numbers)
+	// fmt.Println("Panjang array numbers adalah", lengthNumbers)
+	// for index, lang := range languages {
+	// 	fmt.Println("index:", index, ", language:", lang)
+	// }
+
+	/* ------------------------ // todo: Quiz perulangan ------------------------ */
+	// title := "Golang the best language"
+	// for index, letter := range title {
+	// 	letterString := string(letter)
+	// (letterString == "a" || letterString == "i" || letterString == "u" || letterString == "e" || letterString == "o")
+	// if index%2 == 0 {
+	// 	fmt.Println("index: ", index, " , letter: ", letterString)
+	// }
+	// switch letterString {
+	// case "a", "i", "u", "e", "o":
+	// 	fmt.Println("index: ", index, " , letter: ", letterString)
+	// }
+	// if index%2 == 0 {
+	// 	switch letterString {
+	// 	case "a", "i", "u", "e", "o":
+	// 		fmt.Println("index: ", index, " , letter: ", letterString)
+	// 	}
+	// }
+	// if index%2 == 0 && (letterString == "a" || letterString == "i" || letterString == "u" || letterString == "e" || letterString == "o") {
+	// 	fmt.Println("index: ", index, " , letter: ", letterString)
+	// }
+	// }
 	// todo: Jika index tidak ingin digunakan, gunakan _
 	// for _, letter := range title {
 	// 	fmt.Println("Letter: ", string(letter))
