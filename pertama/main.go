@@ -1,6 +1,7 @@
 package main
 
 import (
+	"errors"
 	"fmt"
 )
 
@@ -10,7 +11,17 @@ func main() {
 	/* ---------------------------- // todo: Function --------------------------- */
 	fmt.Println("Halo, belajar Golang...")
 	/* ------------------------- // todo: Quiz function ------------------------- */
-	//
+	// note: Quiz 1
+	scores := []int{10, 5, 8, 9, 7}
+	total := sum(scores)
+	fmt.Println("total =", total)
+	fmt.Println("======")
+	// note: Quiz 2
+	result, err := calculate(10, 2, "=")
+	if err != nil {
+		fmt.Println("Ooops, something error", err.Error())
+	}
+	fmt.Println("Result =", result, ", err =", err)
 	// luas, keliling := calculate(10, 2)
 	// note: Jika hanya perlu satu pengembalian: luas, _ := calculate(10,2)
 	// fmt.Println("luas =", luas, ", keliling =", keliling)
@@ -223,6 +234,51 @@ func main() {
 // }
 
 // todo: Quiz function
+// todo: Quiz 1
+func sum(numbers []int) int {
+	var total int
+	for _, number := range numbers {
+		total = total + number
+	}
+	return total
+}
+
+// todo: Quiz 2
+// todo: My Version
+// func calculate(x, y int, symbol string) (result int, err string) {
+// 	err = "-"
+// 	if symbol == "+" {
+// 		result = x + y
+// 	} else if symbol == "-" {
+// 		result = x - y
+// 	} else if symbol == "*" {
+// 		result = x * y
+// 	} else if symbol == "/" {
+// 		result = x / y
+// 	} else {
+// 		err = "Symbol is invalid"
+// 	}
+// 	return result, err
+// }
+
+// todo: Mas Agung Version
+func calculate(x, y int, operation string) (int, error) {
+	var result int
+	var errorResult error
+	switch operation {
+	case "+":
+		result = x + y
+	case "-":
+		result = x - y
+	case "*":
+		result = x * y
+	case "/":
+		result = x / y
+	default:
+		errorResult = errors.New("Unknown Operation")
+	}
+	return result, errorResult
+}
 
 // todo: Multiple return (Lebih dari satu pengembalian)
 // note: Predefined return value (bisa juga seperti ini)
