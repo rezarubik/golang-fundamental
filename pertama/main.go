@@ -7,10 +7,22 @@ import (
 //note: Standar library in golang,
 
 func main() {
+	/* ---------------------------- // todo: Function --------------------------- */
 	fmt.Println("Halo, belajar Golang...")
+	/* ------------------------- // todo: Quiz function ------------------------- */
+	//
+	// luas, keliling := calculate(10, 2)
+	// note: Jika hanya perlu satu pengembalian: luas, _ := calculate(10,2)
+	// fmt.Println("luas =", luas, ", keliling =", keliling)
+	// resultAdd := add(10, 20)
+	// fmt.Println(resultAdd)
+	// sentence := printMyResult("Params 1")
+	// fmt.Println(sentence)
+	// printMyResult("Params 2")
+	// printMyResult("Params 3")
 	/* ---------------- // todo: Quiz Golang yang lebih Kompleks ---------------- */
 	// todo: Hitung rata-rata
-	scores := [8]int{100, 80, 75, 92, 70, 93, 88, 67}
+	// scores := [8]int{100, 80, 75, 92, 70, 93, 88, 67}
 	// var total int
 	// for _, score := range scores {
 	// 	total = total + score
@@ -19,13 +31,13 @@ func main() {
 	// average := float64(total) / float64(len(scores))
 	// fmt.Println(average)
 	// note: Good scores >= 90
-	var goodScores []int
-	for _, score := range scores {
-		if score >= 90 {
-			goodScores = append(goodScores, score)
-		}
-	}
-	fmt.Println(goodScores)
+	// var goodScores []int
+	// for _, score := range scores {
+	// 	if score >= 90 {
+	// 		goodScores = append(goodScores, score)
+	// 	}
+	// }
+	// fmt.Println(goodScores)
 	/* -------------------------- // todo: Slice of map ------------------------- */
 	// students := []map[string]string{
 	// 	{"name": "Agung", "score": "A"},
@@ -203,3 +215,31 @@ func main() {
 	// fmt.Println(sentence)
 	// fmt.Println(namaSaya)
 }
+
+// func printMyResult(sentence string) string {
+// 	newSentence := sentence + " belajar Golang"
+// 	// fmt.Println(sentence)
+// 	return newSentence
+// }
+
+// todo: Quiz function
+
+// todo: Multiple return (Lebih dari satu pengembalian)
+// note: Predefined return value (bisa juga seperti ini)
+// func calculate(panjang int, lebar int) (luas int, keliling int) {
+// 	luas = panjang * lebar
+// 	keliling = 2 * (panjang + lebar)
+// 	return luas, keliling
+// }
+
+// func calculate(panjang int, lebar int) (int, int) {
+// 	luas := panjang * lebar
+// 	keliling := 2 * (panjang + lebar)
+// 	return luas, keliling
+// }
+
+// func add(x, y int) int {
+// 	// note: Sama dengan add(x int, y int)
+// 	result := x + y
+// 	return result
+// }
