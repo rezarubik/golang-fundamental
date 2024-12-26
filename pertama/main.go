@@ -8,19 +8,62 @@ import (
 
 func main() {
 	fmt.Println("Halo, belajar Golang...")
+	/* ---------------- // todo: Quiz Golang yang lebih Kompleks ---------------- */
+	// todo: Hitung rata-rata
+	scores := [8]int{100, 80, 75, 92, 70, 93, 88, 67}
+	// var total int
+	// for _, score := range scores {
+	// 	total = total + score
+	// }
+	// fmt.Println(total)
+	// average := float64(total) / float64(len(scores))
+	// fmt.Println(average)
+	// note: Good scores >= 90
+	var goodScores []int
+	for _, score := range scores {
+		if score >= 90 {
+			goodScores = append(goodScores, score)
+		}
+	}
+	fmt.Println(goodScores)
+	/* -------------------------- // todo: Slice of map ------------------------- */
+	// students := []map[string]string{
+	// 	{"name": "Agung", "score": "A"},
+	// 	{"name": "Link", "score": "B"},
+	// 	{"name": "Mario", "score": "C"},
+	// }
+
+	// for _, student := range students {
+	// 	nameStudent := student["name"]
+	// 	scoreStudent := student["score"]
+	// 	fmt.Println(nameStudent, "get score", scoreStudent)
+	// }
 	/* ------------------------------ // todo: Map ------------------------------ */
 	// map [key] tipe_data valuenya
 	// note: Langsung assign
-	myMap := map[string]string{
-		"ruby": "This is rubby",
-		"go":   "This is GO",
-	}
+	// myMap := map[string]string{
+	// 	"ruby":       "This is rubby",
+	// 	"go":         "This is GO",
+	// 	"javascript": "Hype",
+	// }
 	// var myMap map[string]int
 	// myMap = map[string]int{}
 	// myMap["GO"] = 10
 	// myMap["Javascript"] = 9
 	// myMap["Rubby"] = 8
-	fmt.Println(myMap)
+	// todo: Map lebih lanjut
+	// for key, value := range myMap {
+	// 	fmt.Println("Key:", key, ", value:", value)
+	// }
+	// fmt.Println("=======")
+	// delete(myMap, "ruby")
+	// for key, value := range myMap {
+	// 	fmt.Println("Key:", key, ", value:", value)
+	// }
+	// value, isAvailable := myMap["python"]
+	// fmt.Println(value)
+	// fmt.Println(isAvailable)
+	// fmt.Println(myMap)
 	// fmt.Println(myMap["GO"])
 	/* ----------------------------- // todo: Slice ----------------------------- */
 	// todo: Assign langsung
