@@ -5,23 +5,55 @@ import (
 	"fmt"
 )
 
+// note: Initiate Struct (Struct bisa dibilang hampir sama dengan model pada laravel)
+type User struct {
+	ID        int
+	FirstName string
+	LastName  string
+	Email     string
+	IsActive  bool
+}
+
 //note: Standar library in golang,
 
 func main() {
-	/* ---------------------------- // todo: Function --------------------------- */
 	fmt.Println("Halo, belajar Golang...")
+	/* ------------------------- // start: Struct Basic ------------------------- */
+	// user := User{}
+	// todo: Mengisi sekaligus ketika pembuatan (bisa juga tanpa menuliskan atributenya tetapi harus urut berdasarkan atribut yg dibuat)
+	user := User{
+		ID:        1,
+		FirstName: "Reza",
+		LastName:  "Pahlevi",
+		IsActive:  true,
+	}
+	// user := User{
+	// 	1,
+	// 	"Reza",
+	// 	"Pahlevi",
+	// 	true,
+	// }
+	// todo: Initiate value ke atribute:
+	// user.ID = 1
+	// user.FirstName = "Reza"
+	// user.LastName = "Pahlevi"
+	// user.IsActive = true
+	fmt.Println(user)
+	/* ------------------------- // end: Struct Basic ------------------------- */
+
+	/* ---------------------------- // todo: Function --------------------------- */
 	/* ------------------------- // todo: Quiz function ------------------------- */
 	// note: Quiz 1
-	scores := []int{10, 5, 8, 9, 7}
-	total := sum(scores)
-	fmt.Println("total =", total)
-	fmt.Println("======")
+	// scores := []int{10, 5, 8, 9, 7}
+	// total := sum(scores)
+	// fmt.Println("total =", total)
+	// fmt.Println("======")
 	// note: Quiz 2
-	result, err := calculate(10, 2, "=")
-	if err != nil {
-		fmt.Println("Ooops, something error", err.Error())
-	}
-	fmt.Println("Result =", result, ", err =", err)
+	// result, err := calculate(10, 2, "=")
+	// if err != nil {
+	// 	fmt.Println("Ooops, something error", err.Error())
+	// }
+	// fmt.Println("Result =", result, ", err =", err)
 	// luas, keliling := calculate(10, 2)
 	// note: Jika hanya perlu satu pengembalian: luas, _ := calculate(10,2)
 	// fmt.Println("luas =", luas, ", keliling =", keliling)
@@ -279,6 +311,8 @@ func calculate(x, y int, operation string) (int, error) {
 	}
 	return result, errorResult
 }
+
+// todo: Struct sebagai parameter
 
 // todo: Multiple return (Lebih dari satu pengembalian)
 // note: Predefined return value (bisa juga seperti ini)
