@@ -3,30 +3,100 @@ package main
 import (
 	"errors"
 	"fmt"
+	"pertama/management"
 )
 
-// note: Initiate Struct (Struct bisa dibilang hampir sama dengan model pada laravel)
-type User struct {
-	ID        int
-	FirstName string
-	LastName  string
-	Email     string
-	IsActive  bool
-}
+/* ------------------- // start: Struct sebagai parameter ------------------- */
+// func displayUser(user User) string {
+// 	return fmt.Sprintf("Nama: %s %s, Email: %s", user.FirstName, user.LastName, user.Email)
+// }
+/* -------------------- // end: Struct sebagai parameter -------------------- */
+
+/* ------------------------ // start: Embedded struct ----------------------- */
+// func displayGroup(group Group) {
+// 	fmt.Printf("Name: %s", group.Name)
+// 	fmt.Println("")
+// 	fmt.Printf("Member count: %d", len(group.Users))
+// 	fmt.Println()
+// 	fmt.Println("Users name")
+// 	for _, user := range group.Users {
+// 		fmt.Println(user.FirstName)
+// 	}
+// }
+/* ------------------------ // emd: Embedded struct ----------------------- */
 
 //note: Standar library in golang,
 
 func main() {
 	fmt.Println("Halo, belajar Golang...")
-	/* ------------------------- // start: Struct Basic ------------------------- */
-	// user := User{}
-	// todo: Mengisi sekaligus ketika pembuatan (bisa juga tanpa menuliskan atributenya tetapi harus urut berdasarkan atribut yg dibuat)
-	user := User{
+	/* ------------------------ // start: method ----------------------- */
+	user := management.User{
 		ID:        1,
 		FirstName: "Reza",
 		LastName:  "Pahlevi",
+		Email:     "reza@gmail.com",
 		IsActive:  true,
 	}
+	result := user.Display()
+	fmt.Println(result)
+	user2 := management.User{
+		ID:        2,
+		FirstName: "Nadiah",
+		LastName:  "Tsamara",
+		Email:     "nadiah@gmail.com",
+		IsActive:  true,
+	}
+	fmt.Println(user2.Display())
+	/* ------------------------ // end: method ----------------------- */
+
+	/* ------------------------ // start: Embedded struct ----------------------- */
+	// user := User{
+	// 	1,
+	// 	"Reza",
+	// 	"Pahlevi",
+	// 	"reza@gmail.com",
+	// 	true,
+	// }
+	// user2 := User{
+	// 	2,
+	// 	"Nadiah",
+	// 	"Tsamara",
+	// 	"nadiah@gmail.com",
+	// 	true,
+	// }
+	users := []management.User{user, user2}
+	group := management.Group{
+		Name:        "Gamer",
+		Admin:       user,
+		Users:       users,
+		IsAvailable: true,
+	}
+
+	// displayGroup(group)
+	group.DisplayGroup()
+
+	/* ------------------------- // end: Embedded struct ------------------------ */
+
+	/* ------------------- // start: Struct sebagai parameter ------------------- */
+	// user := User{
+	// 	1,
+	// 	"Reza",
+	// 	"Pahlevi",
+	// 	"reza@gmail.com",
+	// 	true,
+	// }
+	// displayUser := displayUser(user)
+	// fmt.Println(displayUser)
+	/* ------------------- // end: Struct sebagai parameter ------------------- */
+	/* ------------------------- // start: Struct Basic ------------------------- */
+	// user := User{}
+	// todo: Mengisi sekaligus ketika pembuatan (bisa juga tanpa menuliskan atributenya tetapi harus urut berdasarkan atribut yg dibuat)
+	// user := User{
+	// 	ID:        1,
+	// 	FirstName: "Reza",
+	// 	LastName:  "Pahlevi",
+	// 	IsActive:  true,
+	// }
 	// user := User{
 	// 	1,
 	// 	"Reza",
@@ -38,7 +108,7 @@ func main() {
 	// user.FirstName = "Reza"
 	// user.LastName = "Pahlevi"
 	// user.IsActive = true
-	fmt.Println(user)
+	// fmt.Println(user)
 	/* ------------------------- // end: Struct Basic ------------------------- */
 
 	/* ---------------------------- // todo: Function --------------------------- */
